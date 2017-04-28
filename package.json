@@ -1,6 +1,6 @@
 {
   "name": "twitter-bot-bot",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "Makes building and running a Twitter bot easy. Pairs with bot-manager.",
   "main": "index.js",
   "dependencies": {
@@ -16,5 +16,13 @@
     "twitter",
     "bot",
     "tweet"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnass/twitter-bot-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dnass/twitter-bot-bot/issues"
+  },
+  "homepage": "https://github.com/dnass/twitter-bot-bot#readme"
 }

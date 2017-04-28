@@ -62,4 +62,8 @@ Bot.prototype.tweet = function (tweetData) {
     return postTweet(tweetData);
 }
 
+Bot.prototype.get = function (getUrl, getData) {
+  return this.twit.get(getUrl, getData);
+}
+
 module.exports = Bot

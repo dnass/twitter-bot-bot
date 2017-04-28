@@ -24,21 +24,23 @@ var bot = new Tbb(run)
 
 twitter-bot-bot and bot-server take care of error handling, so no `catch` needed.
 
-twitter-bot-bot bots run as child processes of bot-server. For console output, write to `bot.log`.
+twitter-bot-bot bots run as child processes of bot-server. For console output, write to `Bot.log`.
 
-To post a tweet, use `bot.tweet`. `bot.tweet` takes an object with a `status` value and optional `media` and `altText` values. `media` must be a base64-encoded image. `bot.tweet` returns a promise that resolves to Twitter's response.
+To post a tweet, use `Bot.tweet`. `Bot.tweet` takes an object with a `status` value and optional `media` and `altText` values. `media` must be a base64-encoded image. `Bot.tweet` returns a promise that resolves to Twitter's response.
+
+Also includes `Bot.get`, a wrapper for `twit.get`.
 
 ### Setting up your bot's package
 
 Bots built with twitter-bot-bot run on [bot-server](https://github.com/dnass/bot-server). To add parameters to your bot that can be configured from the server (such as API keys), add a `botConfig` object to your bot's `package.json` with a `params` array containing the names of the parameters.
 
 ```
-botConfig: {
-  params: ['NASA_API_KEY']
+"botConfig": {
+  "params": ["NASA_API_KEY"]
 }
 ```
 
-You can then access this from your code as `bot.params.NASA_API_KEY`.
+You can then access this from your code as `Bot.params.NASA_API_KEY`.
 
 The `botConfig` object should also contain a `handle` key with the handle of your Twitter bot's associated account.
 
