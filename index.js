@@ -9,7 +9,7 @@ function Bot(run) {
     const initData = JSON.parse(process.stdin.read());
     self.params = initData.params;
     self.twit = new Twit(initData.twit);
-    self.runFunc().then(() => self.log('kill')).catch(err => self.log({error: err.message}));
+    self.runFunc().then(() => self.log({done: true})).catch(err => self.log({error: err.message}));
   });
 }
 
@@ -62,8 +62,9 @@ Bot.prototype.tweet = function (tweetData) {
     return postTweet(tweetData);
 }
 
-Bot.prototype.get = function (getUrl, getData) {
-  return this.twit.get(getUrl, getData);
+Bot.prototype.end = function () {
+  const self = this;
+  self.log({done: true});
 }
 
 module.exports = Bot
